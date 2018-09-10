@@ -1,0 +1,47 @@
+.ui-tabs{
+    position: relative;
+    height: 99%
+}
+
+.ui-widget{
+    position: relative;;
+    height: 99%;
+}
+.ui-tabs-panel{
+    position: relative;
+    height: 90%;
+    padding: 1%;
+}
+
+.ui-tabs-panels{
+    position: relative;
+    height: 90%;
+}
+
+.ui-datatable-data .ui-widget-content{
+    position: relative;
+    height: 100%;
+}
+
+.super-content .ui-widget-content {
+    position: relative;
+    height: 100%;
+}
+
+.super-content .ui-panel-content {
+    position: relative;
+    height: 100%;
+}
+
+.ui-panel .ui-panel-content{
+    height: 100%;
+}
+
+.ua-corner-all{
+    position: relative;;
+    height: 99%;
+}
+
+
+
+

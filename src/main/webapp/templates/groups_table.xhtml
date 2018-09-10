@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <ui:composition>
+        <f:metadata>
+            <f:viewParam name="productId" value="/index.xhtml"/>
+        </f:metadata>
+        <div style="position: relative; height: 100%; width: 100%">
+            <p:fieldset legend="Группы" style="margin-bottom:20px; padding: 5px">
+                <p:dataTable var="group" value="#{groupsController.groups}" scrollable="true" scrollHeight="500">
+                    <p:column headerText="Id" style="width: 5%">
+                        <h:form>
+                            <p:commandLink value="#{group.id}" ajax="true" update="@([id$=fun_tab])"
+                                           action="#{functionController.getFunctionsByGroup()}">
+                                <f:param name="group_id" value="#{group.id}"/>
+                            </p:commandLink>
+                        </h:form>
+                    </p:column>
+
+                    <p:column headerText="Name" style="width: 48%">
+                        <h:form>
+                            <p:commandLink value="#{group.name}" ajax="true" update="@([id$=fun_tab])"
+                                           action="#{functionController.getFunctionsByGroup()}">
+                                <f:param name="group_id" value="#{group.id}"/>
+                            </p:commandLink>
+                        </h:form>
+                    </p:column>
+                    <p:column headerText="Desc" style="width: 26%">
+                        <h:form>
+                            <p:commandLink value="#{group.descr}" ajax="true" update="@([id$=fun_tab])"
+                                           action="#{functionController.getFunctionsByGroup()}">
+                                <f:param name="group_id" value="#{group.id}"/>
+                            </p:commandLink>
+                        </h:form>
+                    </p:column>
+                    <p:column headerText="Date" style="width: 23%">
+                        <h:form>
+                            <p:commandLink value="#{group.ctime}" ajax="true" update="@([id$=fun_tab])"
+                                           action="#{functionController.getFunctionsByGroup()}">
+                                <f:param name="group_id" value="#{group.id}"/>
+                            </p:commandLink>
+                        </h:form>
+                    </p:column>
+                </p:dataTable>
+            </p:fieldset>
+        </div>
+    </ui:composition>
+</h:body>
+</html>

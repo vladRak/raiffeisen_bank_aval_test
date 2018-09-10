@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <f:metadata>
+        <f:viewParam name="productId" value="/index.xhtml"/>
+    </f:metadata>
+    <f:facet name="last">
+        <h:outputStylesheet library="css" name="/styles.css"/>
+    </f:facet>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" size="8%" style="position: relative; padding: 2px">
+            <ui:insert name="header">
+                <ui:include src="/templates/header.xhtml">
+                </ui:include>
+            </ui:insert>
+        </p:layoutUnit>
+        <p:layoutUnit position="center" size="92%" style="position: relative">
+            <p:tabView orientation="top" dynamic="true">
+                <p:tab title="Группы и Функции">
+                    <f:facet name="actions">
+                        <p:button value="Редактировать"/>
+                    </f:facet>
+                    <div style="height: 100%; width: 100%; position: relative">
+                        <div style="float: left; height: 100%; width: 35%; position: relative">
+                            <ui:insert name="groups">
+                                <ui:include src="/templates/groups_table.xhtml">
+                                </ui:include>
+                            </ui:insert>
+                            <div style="width: 100%">
+                                <p:button outcome="/index.xhtml" value="Системная проверка"
+                                          style="width: 100%; position: relative">
+                                    <f:param name="productId" value="10"/>
+                                </p:button>
+                            </div>
+                        </div>
+                        <div style="float: right; height: 100%; width: 65%; position: relative">
+                            <div style="height: 50%; position: relative">
+                                <ui:insert name="functions">
+                                    <ui:include src="/templates/functions_table.xhtml">
+                                    </ui:include>
+                                </ui:insert>
+                            </div>
+                            <div style="height: 50%; position: relative; margin-top: 2%">
+
+                                <ui:insert name="parameters">
+                                    <ui:include src="/templates/parameters_table.xhtml">
+                                    </ui:include>
+                                </ui:insert>
+                            </div>
+                        </div>
+                    </div>
+                </p:tab>
+                <p:tab title="Параметры">
+                    <f:facet name="actions">
+                        <p:button value="Редактировать"/>
+                    </f:facet>
+                </p:tab>
+                <p:tab title="Валидация">
+                    <f:facet name="actions">
+                        <p:button value="Редактировать"/>
+                    </f:facet>
+                </p:tab>
+                <p:tab title="Печатный модуль">
+                    <f:facet name="actions">
+                        <p:button value="Редактировать"/>
+                    </f:facet>
+                </p:tab>
+                <p:tab title="Регламенты">
+                    <f:facet name="actions">
+                        <p:button value="Редактировать"/>
+                    </f:facet>
+                </p:tab>
+            </p:tabView>
+        </p:layoutUnit>
+    </p:layout>
+</h:body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <ui:composition>
+        <p:fieldset legend="Параметры" style="margin-bottom:20px; padding: 5px">
+            <p:dataTable id="params_tab" var="parameter" value="#{parameterController.params}" scrollable="true" scrollHeight="230">
+                <p:column headerText="Id" style="width: 5%">
+                    <h:outputText value="#{parameter.id}"/>
+                </p:column>
+                <p:column headerText="Name of param" style="width: 20%">
+                    <h:outputText value="#{parameter.name}"/>
+                </p:column>
+                <p:column headerText="Desc" style="width: 30%">
+                    <h:outputText value="#{parameter.descr}"/>
+                </p:column>
+                <p:column headerText="Date" style="width: 43%">
+                    <h:outputText value="#{parameter.ctime}"/>
+                </p:column>
+            </p:dataTable>
+        </p:fieldset>
+    </ui:composition>
+</h:body>
+</html>
